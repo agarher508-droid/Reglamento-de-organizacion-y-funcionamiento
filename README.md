@@ -1,18 +1,16 @@
-# CEIP Toxiria · ROF 2026/27
-
-Web responsive del Reglamento de Organización y Funcionamiento del CEIP Toxiria (Torredonjimeno, Jaén). Incluye navegación por secciones, tarjetas interactivas con ventanas de contenido y buscador.
-
-## Archivos
-- `index.html`: web completa.
-- `escudo-toxiria.png`: escudo con fondo transparente utilizado en la portada.
-- `logo-toxiria.png`: recurso gráfico adicional.
+# CEIP Toxiria · Reglamento de Organización y Funcionamiento 2026/27
 
 ## Publicar en GitHub Pages
-1. Descarga y descomprime este ZIP.
-2. En GitHub, abre tu repositorio y pulsa **Add file → Upload files**.
-3. Sube **todos los archivos** de esta carpeta (no solo `index.html`) a la raíz del repositorio.
-4. Pulsa **Commit changes**.
-5. En **Settings → Pages**, elige **Deploy from a branch**, selecciona la rama `main` y la carpeta `/(root)`, y guarda.
-6. Abre la dirección que aparece en Pages y recarga la página.
+1. Sube **todos los archivos de esta carpeta** a la raíz del repositorio (no subas solo la carpeta contenedora).
+2. En GitHub abre Settings → Pages.
+3. Selecciona Deploy from a branch, rama `main` y carpeta `/(root)`. Guarda.
+4. Abre la web publicada y recarga.
 
-La web es estática: no necesita instalar programas ni configurar un servidor. Los apartados muestran resúmenes informativos del ROF; para publicar el texto íntegro oficial, conviene añadir también el documento aprobado por el centro como archivo descargable.
+## Contenido
+- `index.html`: portada y mosaico interactivo; cada tarjeta abre información y enlaces al documento completo.
+- `reglamento-completo.html`: versión legible del texto del reglamento.
+- `ROF_2025.docx`: documento Word original proporcionado.
+- `escudo-toxiria.png`: escudo del centro.
+- `logo-toxiria.png`: recurso gráfico adicional.
+
+Mantén todos estos archivos juntos en la raíz del sitio para que funcionen los enlaces.

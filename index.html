@@ -120,6 +120,7 @@ footer p{color:#bcd6ca;margin:7px 0}
     <div><h2>Documentación del centro</h2><p class="section-intro">Mosaico interactivo inspirado en la estructura del ROF. Pulsa cada tarjeta para consultar su contenido.</p></div>
   </div>
   <div class="search"><input id="search" placeholder="Buscar: biblioteca, familias, TIC, evaluación..."></div>
+  <p class="section-intro" style="margin:12px 0 20px">¿Necesitas consultar el texto íntegro? <a class="btn secondary" href="ROF_2025.docx" target="_blank" rel="noopener">Abrir Reglamento completo (Word) ↗</a> <a class="btn secondary" href="reglamento-completo.html" target="_blank" rel="noopener">Leer el reglamento en la web ↗</a></p>
   <div class="grid" id="cards">
     <article class="card searchable" role="button" tabindex="0" data-modal="fundamentos" data-key="fundamentos finalidades rof"><div class="icon">🎯</div><h3>Fundamentos y finalidades</h3><p>Marco de referencia para el funcionamiento del centro y sus sectores.</p><span class="arrow">Consultar →</span></article>
     <article class="card searchable" role="button" tabindex="0" data-modal="participacion" data-key="participacion alumnado profesorado familias pas"><div class="icon">👥</div><h3>Participación de la comunidad</h3><p>Cauces de participación del alumnado, profesorado, familias y PAS.</p><span class="arrow">Consultar →</span></article>
@@ -185,18 +186,19 @@ moviles:["Móviles y otros aparatos electrónicos",`<p>Se contemplan normas sobr
 generales:["Disposiciones generales",`<p>El reglamento finaliza con disposiciones generales y recoge, entre otros aspectos, la posibilidad de establecer un uniforme y las competencias relacionadas con la prevención de riesgos laborales.</p>`]
 };
 const modal=document.getElementById('modal'), modalContent=document.getElementById('modal-content');
-document.addEventListener('click',e=>{
- const target=e.target.closest('[data-modal]');
- if(!target) return;
+function openROFCard(target){
  const key=target.dataset.modal, c=content[key];
  if(!c) return;
- modalContent.innerHTML='<div class="badge">ROF · CEIP Toxiria</div><h2>'+c[0]+'</h2>'+c[1];
+ modalContent.innerHTML='<div class="badge">ROF · CEIP Toxiria</div><h2>'+c[0]+'</h2>'+c[1]+'<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn primary" href="reglamento-completo.html" target="_blank" rel="noopener">Leer documento completo ↗</a><a class="btn secondary" href="ROF_2025.docx" target="_blank" rel="noopener">Abrir archivo Word ↗</a></div>';
  modal.classList.add('open');
-});
-document.querySelector('.close').onclick=()=>modal.classList.remove('open');
-document.querySelectorAll('[data-modal]').forEach(card=>card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click()}}));
-modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
-document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+ modal.setAttribute('aria-hidden','false');
+ document.body.style.overflow='hidden';
+}
+document.addEventListener('click',e=>{const target=e.target.closest('[data-modal]'); if(target){e.preventDefault();openROFCard(target);}});
+document.querySelector('.close').addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';});
+document.querySelectorAll('[data-modal]').forEach(card=>card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openROFCard(card);}}));
+modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}});
 document.getElementById('search').addEventListener('input',e=>{
  const q=e.target.value.toLowerCase().trim();
  document.querySelectorAll('.searchable').forEach(c=>c.style.display=(!q||c.dataset.key.includes(q)||c.innerText.toLowerCase().includes(q))?'':'none');
