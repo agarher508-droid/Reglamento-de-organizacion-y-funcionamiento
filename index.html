@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d6b43">
+<title>Reglamento de Organización y Funcionamiento · CEIP Toxiria · 2026/27</title>
+<style>
+:root{
+  --green:#0d6b43; --green2:#15905a; --mint:#e9f6ef; --cream:#fbfaf6;
+  --ink:#18352a; --muted:#63766d; --gold:#d6a63a; --white:#fff;
+  --shadow:0 18px 50px rgba(13,107,67,.12); --radius:24px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream)}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--green);color:white;padding:9px 6vw;font-size:.78rem;display:flex;justify-content:space-between;gap:20px}
+header{position:sticky;top:0;z-index:20;background:rgba(251,250,246,.92);backdrop-filter:blur(16px);border-bottom:1px solid #e5ece7}
+.nav{max-width:1200px;margin:auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.03em}
+.brand img{width:58px;height:58px;object-fit:contain}
+.brand small{display:block;color:var(--muted);font-weight:600;letter-spacing:0}
+.menu{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.menu a{padding:9px 12px;border-radius:12px;font-size:.85rem;font-weight:700;color:#365449}
+.menu a:hover{background:var(--mint);color:var(--green)}
+.hero{max-width:1200px;margin:0 auto;padding:80px 24px 55px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:900;font-size:.8rem;text-transform:uppercase;letter-spacing:.13em}
+.kicker:before{content:"";width:28px;height:3px;background:var(--gold);border-radius:99px}
+h1{font-size:clamp(3rem,7vw,6.5rem);line-height:.88;letter-spacing:-.075em;margin:18px 0 25px}
+h1 span{color:var(--green)}
+.rof-title{font-size:clamp(2.45rem,4.5vw,4.55rem);line-height:1.02;letter-spacing:-.055em;overflow-wrap:normal}
+.crest-label{position:relative;z-index:2;text-align:center;font-size:.9rem;font-weight:900;letter-spacing:.15em;color:#d6e9df}
+.crest-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:45px 20px 35px;pointer-events:none}
+.crest-wrap img{width:180px;height:230px;object-fit:contain;position:relative;z-index:1}
+.crest-tag{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);white-space:nowrap;z-index:2}
+.hero p{font-size:1.1rem;line-height:1.75;color:var(--muted);max-width:680px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 17px;border-radius:14px;font-weight:800;border:1px solid #dce9e1}
+.btn.primary{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 12px 25px rgba(13,107,67,.18)}
+.btn.secondary{background:#fff}
+.hero-card{background:linear-gradient(145deg,#0d6b43,#0b4f35);border-radius:36px;min-height:390px;padding:30px;color:white;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-card:before,.hero-card:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.16);border-radius:50%}
+.hero-card:before{width:330px;height:330px;right:-140px;top:-100px}
+.hero-card:after{width:260px;height:260px;left:-120px;bottom:-130px}
+.hero-card .year{font-size:5.5rem;font-weight:900;letter-spacing:-.08em;line-height:.9;margin-top:60px}
+.hero-card .tag{margin-top:18px;display:inline-block;background:rgba(255,255,255,.12);padding:8px 12px;border-radius:99px}
+.section{max-width:1200px;margin:auto;padding:55px 24px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}
+.section h2{font-size:2.2rem;letter-spacing:-.05em;margin:0}
+.section-intro{color:var(--muted);max-width:620px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid #e5ece7;border-radius:var(--radius);padding:22px;min-height:190px;box-shadow:0 8px 30px rgba(20,60,42,.04);transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card[data-modal]{cursor:pointer}.card[data-modal]:focus{outline:3px solid #9bd6b7;outline-offset:3px}
+.icon{width:45px;height:45px;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:1.35rem;margin-bottom:17px}
+.card h3{margin:0 0 8px;font-size:1.05rem}.card p{margin:0;color:var(--muted);line-height:1.55;font-size:.92rem}
+.card .arrow{display:inline-block;margin-top:16px;color:var(--green);font-weight:900}
+.feature{background:var(--green);color:white;border-radius:32px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.feature h2{font-size:2.6rem;letter-spacing:-.06em;margin:0 0 12px}.feature p{color:#d8eee3;line-height:1.7}
+.feature .mini{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);padding:17px;border-radius:18px;margin-bottom:10px}
+.feature .mini strong{display:block;margin-bottom:4px}
+.search{display:flex;gap:10px;margin-bottom:18px}
+.search input{flex:1;padding:14px 16px;border:1px solid #dfe9e3;border-radius:14px;font-size:1rem;background:white;outline:none}
+.search input:focus{border-color:var(--green)}
+footer{margin-top:50px;background:#123b2c;color:white;padding:35px 6vw}
+.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer p{color:#bcd6ca;margin:7px 0}
+.modal{position:fixed;inset:0;background:rgba(10,35,25,.55);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal.open{display:flex}.modal-box{background:#fff;max-width:760px;width:100%;max-height:85vh;overflow:auto;border-radius:26px;padding:30px;position:relative}
+.close{position:absolute;right:16px;top:16px;border:0;background:#edf5f0;width:38px;height:38px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+.modal-box h2{margin-top:0;font-size:2rem}.modal-box p,.modal-box li{line-height:1.7;color:#52665d}
+.badge{display:inline-block;background:var(--mint);color:var(--green);font-size:.75rem;font-weight:900;padding:7px 10px;border-radius:99px;margin-bottom:12px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:55px}.grid{grid-template-columns:1fr 1fr}.feature{grid-template-columns:1fr}.menu{display:none}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.topbar{display:none}.nav{padding:10px 16px}.hero,.section{padding-left:18px;padding-right:18px}h1{font-size:3.2rem}.rof-title{font-size:clamp(2.1rem,9vw,3rem);line-height:1.04;letter-spacing:-.05em}.hero-card{min-height:300px}.crest-wrap img{height:190px;width:150px}}
+</style>
+</head>
+<body>
+<div class="topbar"><span>Junta de Andalucía · Consejería de Desarrollo Educativo y Formación Profesional</span><span>Torredonjimeno · Jaén</span></div>
+<header>
+<nav class="nav">
+  <a class="brand" href="#inicio">
+    <img src="escudo-toxiria.png" alt="Escudo del CEIP Toxiria">
+    <span>CEIP TOXIRIA<small>Torredonjimeno</small></span>
+  </a>
+  <div class="menu">
+    <a href="#centro">Centro</a><a href="#documentos">Documentación</a><a href="#organizacion">Organización</a><a href="#familias">Familias</a>
+  </div>
+</nav>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div>
+    <div class="kicker">Portal institucional · Curso 2026/27</div>
+    <h1 class="rof-title">REGLAMENTO DE<br><span>ORGANIZACIÓN Y</span><br>FUNCIONAMIENTO</h1>
+    <p>CEIP Toxiria · Torredonjimeno (Jaén). Consulta la organización del centro y los apartados del Reglamento de Organización y Funcionamiento.</p>
+    <div class="actions">
+      <a class="btn primary" href="#documentos">Explorar documentación →</a>
+      <a class="btn secondary" href="#organizacion">Ver organización</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="crest-label">CEIP TOXIRIA</div>
+    <div class="crest-wrap"><img src="escudo-toxiria.png" alt="Escudo del CEIP Toxiria"></div>
+    <div class="tag crest-tag">Curso escolar 2026 · 2027</div>
+  </div>
+</section>
+
+<section class="section" id="centro">
+  <div class="section-head"><div><h2>El centro, de un vistazo</h2><p class="section-intro">Una portada pensada para familias y comunidad educativa: limpia, visual y fácil de navegar.</p></div></div>
+  <div class="grid">
+    <article class="card"><div class="icon">🏫</div><h3>Identidad</h3><p>CEIP Toxiria · Torredonjimeno (Jaén). Un espacio educativo abierto a la participación y la colaboración.</p></article>
+    <article class="card"><div class="icon">🤝</div><h3>Comunidad educativa</h3><p>Alumnado, profesorado, familias y personal de administración y servicios forman parte de la vida del centro.</p></article>
+    <article class="card"><div class="icon">📚</div><h3>Organización</h3><p>La documentación del centro recoge órganos de gobierno, coordinación docente, espacios, recursos y normas de funcionamiento.</p></article>
+  </div>
+</section>
+
+<section class="section" id="documentos">
+  <div class="section-head">
+    <div><h2>Documentación del centro</h2><p class="section-intro">Mosaico interactivo inspirado en la estructura del ROF. Pulsa cada tarjeta para consultar su contenido.</p></div>
+  </div>
+  <div class="search"><input id="search" placeholder="Buscar: biblioteca, familias, TIC, evaluación..."></div>
+  <div class="grid" id="cards">
+    <article class="card searchable" role="button" tabindex="0" data-modal="fundamentos" data-key="fundamentos finalidades rof"><div class="icon">🎯</div><h3>Fundamentos y finalidades</h3><p>Marco de referencia para el funcionamiento del centro y sus sectores.</p><span class="arrow">Consultar →</span></article>
+    <article class="card searchable" role="button" tabindex="0" data-modal="participacion" data-key="participacion alumnado profesorado familias pas"><div class="icon">👥</div><h3>Participación de la comunidad</h3><p>Cauces de participación del alumnado, profesorado, familias y PAS.</p><span class="arrow">Consultar →</span></article>
+    <article class="card searchable" role="button" tabindex="0" data-modal="gobierno" data-key="gobierno coordinacion escolarizacion evaluacion"><div class="icon">⚙️</div><h3>Gobierno y coordinación</h3><p>Órganos de gobierno, coordinación docente, escolarización y evaluación.</p><span class="arrow">Consultar →</span></article>
+    <article class="card searchable" role="button" tabindex="0" data-modal="espacios" data-key="espacios biblioteca instalaciones recursos entradas salidas recreo"><div class="icon">📖</div><h3>Espacios y biblioteca</h3><p>Organización de instalaciones, recursos, entradas, recreos y biblioteca escolar.</p><span class="arrow">Consultar →</span></article>
+    <article class="card searchable" role="button" tabindex="0" data-modal="tic" data-key="tic internet moviles privacidad seguridad"><div class="icon">💻</div><h3>TIC y seguridad digital</h3><p>Uso de las TIC, protección de la intimidad, acceso seguro a Internet y dispositivos.</p><span class="arrow">Consultar →</span></article>
+    <article class="card searchable" role="button" tabindex="0" data-modal="autoproteccion" data-key="autoproteccion emergencias evacuacion prevencion"><div class="icon">🛡️</div><h3>Autoprotección</h3><p>Medidas de prevención, organización y respuesta ante posibles emergencias.</p><span class="arrow">Consultar →</span></article>
+    <article class="card searchable" role="button" tabindex="0" data-modal="libros" data-key="gratuidad libros texto tutores"><div class="icon">📘</div><h3>Gratuidad de libros</h3><p>Colaboración de las tutorías en la gestión del programa de gratuidad.</p><span class="arrow">Consultar →</span></article>
+    <article class="card searchable" role="button" tabindex="0" data-modal="moviles" data-key="moviles aparatos electronicos internet"><div class="icon">📵</div><h3>Dispositivos electrónicos</h3><p>Normas sobre móviles y otros aparatos electrónicos y acceso seguro a Internet.</p><span class="arrow">Consultar →</span></article>
+    <article class="card searchable" role="button" tabindex="0" data-modal="generales" data-key="uniforme disposiciones generales"><div class="icon">✨</div><h3>Disposiciones generales</h3><p>Aspectos generales y disposiciones finales del reglamento de organización y funcionamiento.</p><span class="arrow">Consultar →</span></article>
+  </div>
+</section>
+
+<section class="section" id="organizacion">
+  <div class="feature">
+    <div>
+      <div class="badge" style="background:rgba(255,255,255,.12);color:white">ORGANIZACIÓN</div>
+      <h2>Una web pensada para encontrar lo importante rápido.</h2>
+      <p>El diseño convierte la documentación extensa en bloques visuales. La navegación se puede ampliar con el resto del Plan de Centro, proyectos, planes y documentos del curso 2026/27.</p>
+    </div>
+    <div>
+      <div class="mini"><strong>Órganos de gobierno</strong><span>Dirección · Jefatura de Estudios · Secretaría · Consejo Escolar · Claustro</span></div>
+      <div class="mini"><strong>Coordinación docente</strong><span>Equipos docentes · ciclos · ETCP · orientación · tutoría</span></div>
+      <div class="mini"><strong>Comunidad educativa</strong><span>Alumnado · familias · profesorado · PAS</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="familias">
+  <div class="section-head"><div><h2>Familias</h2><p class="section-intro">La participación familiar forma parte de la vida del centro y se articula mediante distintos cauces de colaboración.</p></div></div>
+  <div class="grid">
+    <article class="card"><div class="icon">📣</div><h3>Delegadas y delegados</h3><p>Representación y comunicación entre las familias y la tutoría.</p></article>
+    <article class="card"><div class="icon">💬</div><h3>Comunicación</h3><p>Canales de colaboración con el profesorado y participación en la vida del centro.</p></article>
+    <article class="card"><div class="icon">❤️</div><h3>AMPA</h3><p>Participación de las asociaciones de familias y colaboración con el Equipo Directivo.</p></article>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="footer-inner">
+  <div><strong>CEIP TOXIRIA</strong><p>Torredonjimeno · Jaén</p></div>
+  <div><strong>Curso 2026/27</strong><p>Portal institucional del centro</p></div>
+  <div><p>Diseño web educativo</p></div>
+</div>
+</footer>
+
+<div class="modal" id="modal">
+<div class="modal-box">
+<button class="close" aria-label="Cerrar">×</button>
+<div id="modal-content"></div>
+</div></div>
+
+<script>
+const content={
+fundamentos:["Fundamentos y finalidades",`<p>El ROF establece un marco de referencia para el funcionamiento del centro y contempla los cauces de participación, la transparencia en la toma de decisiones, la organización de espacios y recursos, la vigilancia de recreos y entradas/salidas, el programa de gratuidad de libros, la autoprotección, la seguridad digital y otros aspectos de organización.</p><p>Entre sus finalidades se incluye mejorar la organización del centro y establecer canales de comunicación y cooperación entre los colectivos de la comunidad educativa.</p>`],
+participacion:["Participación de la comunidad educativa",`<p>La comunidad educativa está integrada por profesorado, alumnado, familias y personal de administración y servicios.</p><ul><li>El alumnado participa mediante delegados y subdelegados de clase.</li><li>El profesorado participa mediante los órganos colegiados y de coordinación docente.</li><li>Las familias pueden colaborar con el profesorado, participar en la vida del centro y asociarse.</li><li>Las familias cuentan con delegadas/os de clase y pueden participar en el Consejo Escolar.</li></ul>`],
+gobierno:["Gobierno y coordinación",`<p>El documento recoge órganos unipersonales —Dirección, Jefatura de Estudios y Secretaría— y órganos colegiados —Consejo Escolar y Claustro—, además de los órganos de coordinación docente.</p><p>También desarrolla aspectos relacionados con escolarización y evaluación del alumnado.</p>`],
+espacios:["Espacios, instalaciones y biblioteca",`<p>Se regulan las entradas y salidas, la organización y vigilancia de los recreos, la biblioteca escolar, el salón de usos múltiples, la cesión de instalaciones, el aula matinal y la pista deportiva.</p><p>La biblioteca tiene como uso prioritario la lectura y el estudio individual en un clima de silencio y respeto. Toda la comunidad escolar puede acceder a la sala de lectura y al préstamo.</p>`],
+tic:["TIC y seguridad digital",`<p>El ROF contempla el funcionamiento y uso de las TIC, medidas para preservar la intimidad del alumnado, seguridad para el acceso a Internet y la figura de coordinación TIC.</p>`],
+autoproteccion:["Plan de Autoprotección",`<p>El Plan de Autoprotección establece una estructura y procedimientos para responder ante posibles emergencias, proteger a las personas y bienes y facilitar la coordinación con servicios externos.</p><p>Incluye prevención, conocimiento del centro y su entorno, vías de evacuación, confinamiento, mantenimiento preventivo y formación de las personas responsables.</p>`],
+libros:["Programa de gratuidad de libros",`<p>El ROF recoge la forma de colaboración de las tutorías en la gestión del programa de gratuidad de libros de texto.</p>`],
+moviles:["Móviles y otros aparatos electrónicos",`<p>Se contemplan normas sobre la utilización de teléfonos móviles y otros aparatos electrónicos y procedimientos para garantizar un acceso seguro a Internet del alumnado.</p>`],
+generales:["Disposiciones generales",`<p>El reglamento finaliza con disposiciones generales y recoge, entre otros aspectos, la posibilidad de establecer un uniforme y las competencias relacionadas con la prevención de riesgos laborales.</p>`]
+};
+const modal=document.getElementById('modal'), modalContent=document.getElementById('modal-content');
+document.addEventListener('click',e=>{
+ const target=e.target.closest('[data-modal]');
+ if(!target) return;
+ const key=target.dataset.modal, c=content[key];
+ if(!c) return;
+ modalContent.innerHTML='<div class="badge">ROF · CEIP Toxiria</div><h2>'+c[0]+'</h2>'+c[1];
+ modal.classList.add('open');
+});
+document.querySelector('.close').onclick=()=>modal.classList.remove('open');
+document.querySelectorAll('[data-modal]').forEach(card=>card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click()}}));
+modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+document.getElementById('search').addEventListener('input',e=>{
+ const q=e.target.value.toLowerCase().trim();
+ document.querySelectorAll('.searchable').forEach(c=>c.style.display=(!q||c.dataset.key.includes(q)||c.innerText.toLowerCase().includes(q))?'':'none');
+});
+</script>
+</body>
+</html>
